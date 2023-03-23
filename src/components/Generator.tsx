@@ -225,6 +225,7 @@ export default () => {
 						placeholder="Enter something..."
 						autocomplete="off"
 						autofocus
+						maxLength={2000}
 						onInput={() => {
 							inputRef.style.height = 'auto'
 							inputRef.style.height = inputRef.scrollHeight + 'px'
