@@ -1,6 +1,7 @@
-import { Show } from 'solid-js'
+import { createSignal, Show } from 'solid-js'
 import type { Accessor, Setter } from 'solid-js'
 import IconEnv from './icons/Env'
+import Modal from './Modal'
 
 interface Props {
 	canEdit: Accessor<boolean>
@@ -8,18 +9,34 @@ interface Props {
 	setSystemRoleEditing: Setter<boolean>
 	currentSystemRoleSettings: Accessor<string>
 	setCurrentSystemRoleSettings: Setter<string>
+	handleButtonPresetClick: (v: string) => void
 }
 
 export default (props: Props) => {
 	let systemInputRef: HTMLTextAreaElement
+
+	const [visiable, setVisiable] = createSignal(false)
 
 	const handleButtonClick = () => {
 		props.setCurrentSystemRoleSettings(systemInputRef.value)
 		props.setSystemRoleEditing(false)
 	}
 
+	const handleButtonPresetClick = (value: any) => {
+		systemInputRef.value = value
+		props.setCurrentSystemRoleSettings(value)
+		props.setSystemRoleEditing(false)
+	}
+
 	return (
 		<div class="my-4">
+			<Show when={visiable()}>
+				<Modal
+					setVisiable={setVisiable}
+					handleButtonPresetClick={handleButtonPresetClick}
+					handleButtonPresetInputClick={props.handleButtonPresetClick}
+				/>
+			</Show>
 			<Show when={!props.systemRoleEditing()}>
 				<Show when={props.currentSystemRoleSettings()}>
 					<div>
@@ -51,6 +68,14 @@ export default (props: Props) => {
 					<p class="my-2 leading-normal text-sm op-50 dark:op-60">
 						设定助手的行为
 					</p>
+					<span
+						onClick={() => {
+							setVisiable(true)
+						}}
+						class="sys-edit-btn mb-4"
+					>
+						<span>预设行为列表</span>
+					</span>
 					<div>
 						<textarea
 							ref={systemInputRef!}

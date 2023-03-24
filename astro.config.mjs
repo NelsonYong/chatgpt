@@ -24,6 +24,7 @@ export default defineConfig({
 	integrations: [unocss(), solidJs()],
 	output: 'server',
 	adapter: envAdapter(),
+
 	vite: {
 		plugins: [
 			process.env.OUTPUT == 'vercel' && vercelDisableBlocks(),

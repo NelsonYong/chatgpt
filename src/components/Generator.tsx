@@ -57,6 +57,11 @@ export default () => {
 		requestWithLatestMessage()
 	}
 
+	const handleButtonPresetClick = (v) => {
+		inputRef.value = v
+		handleButtonClick()
+	}
+
 	const smoothToBottom = useThrottleFn(
 		() => {
 			window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
@@ -189,6 +194,7 @@ export default () => {
 				setSystemRoleEditing={setSystemRoleEditing}
 				currentSystemRoleSettings={currentSystemRoleSettings}
 				setCurrentSystemRoleSettings={setCurrentSystemRoleSettings}
+				handleButtonPresetClick={handleButtonPresetClick}
 			/>
 			<Index each={messageList()}>
 				{(message, index) => (

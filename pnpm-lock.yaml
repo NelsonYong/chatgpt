@@ -22,6 +22,7 @@ specifiers:
   markdown-it-katex: ^2.0.3
   punycode: ^2.3.0
   solid-js: 1.6.12
+  solid-request: ^1.1.8
   solidjs-use: ^1.2.0
   undici: ^5.20.0
   unocss: ^0.50.1
@@ -43,6 +44,7 @@ dependencies:
   markdown-it-highlightjs: 4.0.1
   markdown-it-katex: 2.0.3
   solid-js: 1.6.12
+  solid-request: 1.1.8
   solidjs-use: 1.2.0
   undici: 5.20.0
   uuid: 9.0.0
@@ -2552,6 +2554,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
 
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
+
   /log-symbols/5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
@@ -3707,6 +3713,12 @@ packages:
     resolution: {integrity: sha512-JFqRobfG3q5r1l4RYVOAukk6+FWtHpXGIjgh/GEsHKweN/kK+iHOtzUALE6+P5t/jIcSNeGiVitX8gmJg+cYvQ==}
     dependencies:
       csstype: 3.1.1
+    dev: false
+
+  /solid-request/1.1.8:
+    resolution: {integrity: sha512-hdT8wMju7uNNMPVnbZeGvcLPxrZk6EDyNoAUYwI/od+Uh0HWuB5oLRfew0U/zTS/vrWLTAQdzdZM/aZkQFhfow==}
+    dependencies:
+      lodash: 4.17.21
     dev: false
 
   /solidjs-use/1.2.0:
