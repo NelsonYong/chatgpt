@@ -33,11 +33,16 @@ const Modal = (props: Props) => {
 	)
 
 	return (
-		<div class="bg">
+		<div
+			class="bg"
+			// onClick={() => {
+			// 	props.setVisiable(false)
+			// }}
+		>
 			<div id="ofBar">
-				<div id="ofBar-title">预设行为列表</div>
-				<div id="ofBar-content">
-					<div class="gen-text-wrapper">
+				<div id="ofBar-title">
+					预设行为列表
+					<div class="gen-text-wrapper text-sm">
 						<input
 							gen-textarea
 							onInput={(e: any) => {
@@ -45,6 +50,8 @@ const Modal = (props: Props) => {
 							}}
 						/>
 					</div>
+				</div>
+				<div id="ofBar-content">
 					<For each={list()} fallback={<div>无内容</div>}>
 						{(item) => (
 							<div
