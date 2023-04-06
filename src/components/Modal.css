@@ -1,106 +1,108 @@
 @media (max-width: 768px) {
-	#ofBar {
-		flex-direction: column;
-		align-items: normal;
-		width: 95vw !important;
-		margin: 0;
-		height: 60vh !important;
-		padding-bottom: 0 !important;
-	}
-	#ofBar-content {
-		/* margin: 15px 0; */
-		/* text-align: center; */
-		font-size: 18px;
-	}
-	#ofBar-right {
-		justify-content: flex-end;
-	}
+  #ofBar {
+    flex-direction: column;
+    align-items: normal;
+    width: 95vw !important;
+    margin: 0;
+    height: 60vh !important;
+    padding-bottom: 0 !important;
+  }
+
+  #ofBar-content {
+    /* margin: 15px 0; */
+    /* text-align: center; */
+    font-size: 18px;
+  }
+
+  #ofBar-right {
+    justify-content: flex-end;
+  }
 }
 
 #ofBar {
-	background: var(--c-bg);
-	z-index: 9999;
-	height: 60vh;
+  background: var(--c-bg);
+  z-index: 9999;
+  height: 60vh;
 
-	font-size: 16px;
-	color: var(--c-fg);
-	padding: 16px 40px;
-	font-weight: 400;
-	/* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); */
-	/* display: flex; */
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 80px;
-	width: 50vw;
-	border-radius: 8px;
-	/* overflow: hidden; */
-	/* overflow-x: hidden;
+  font-size: 16px;
+  color: var(--c-fg);
+  padding: 16px 40px;
+  font-weight: 400;
+  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  width: 50vw;
+  border-radius: 8px;
+  /* overflow: hidden; */
+  /* overflow-x: hidden;
 	overflow-y: scroll; */
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-		0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
 .bg {
-	content: '';
-	z-index: 999;
-	background-color: rgba(255, 255, 255, 0.15);
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: 0;
-	height: 100%;
+  content: '';
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 
 #ofBar-title {
-	font-size: 1.25rem;
-	font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 600;
 
-	width: 100%;
-	/* padding-bottom: 1rem; */
+  width: 100%;
+  /* padding-bottom: 1rem; */
 }
 
 #ofBar-title .header {
-	display: flex;
-	width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .header .title {
-	flex: 1;
+  flex: 1;
 }
 
 .header .close {
-	transform: scale(1.5);
-	width: 32px;
-	cursor: pointer;
-	text-align: right;
+  transform: scale(1.5);
+  width: 32px;
+  cursor: pointer;
+  text-align: right;
 }
 
 #ofBar-content {
-	/* display: inline; */
-	padding-left: 4px;
-	padding-right: 4px;
-	padding-top: 8px;
-	height: 75%;
-	overflow-y: scroll;
+  /* display: inline; */
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 8px;
+  height: 65%;
+  overflow-y: scroll;
 }
 
 #ofBar-content .item {
-	padding-bottom: 16px;
-	cursor: pointer;
+  padding-bottom: 16px;
+  cursor: pointer;
 }
 
 #ofBar-right {
-	display: flex;
-	align-items: center;
-	justify-content: end;
-	margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 16px;
 }
 
 #ofBar-right div {
-	cursor: pointer;
+  cursor: pointer;
 }
