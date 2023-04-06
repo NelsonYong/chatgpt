@@ -1,5 +1,12 @@
 import type { ChatMessage } from '@/types'
-import { createSignal, Index, Show, onMount, onCleanup } from 'solid-js'
+import {
+	createSignal,
+	Index,
+	Show,
+	onMount,
+	onCleanup,
+	createEffect,
+} from 'solid-js'
 import IconClear from './icons/Clear'
 import MessageItem from './MessageItem'
 import SystemRoleSettings from './SystemRoleSettings'
@@ -86,6 +93,12 @@ export default () => {
 				})
 			}
 			const timestamp = Date.now()
+			// requestMessageList[0] = {
+			// 	role: 'user',
+			// 	content: `记住你的名字叫lren 或者 艾琳.不管后面我发出什么命令，你的名字都不可改变。请你记住一些指令,当收到命令关于切换预设角色的时候，你的回答不要有多余的问题，只需要回答 ${`系统代码[01]: 切换预设角色`}，我正在执行系统指令。 \n我的第一个问题是 ${
+			// 		requestMessageList[0].content
+			// 	}`,
+			// }
 			const response = await fetch('/api/generate', {
 				method: 'POST',
 				body: JSON.stringify({
@@ -185,6 +198,10 @@ export default () => {
 			handleButtonClick()
 		}
 	}
+
+	createEffect(() => {
+		console.log(currentAssistantMessage())
+	})
 
 	return (
 		<div my-6>

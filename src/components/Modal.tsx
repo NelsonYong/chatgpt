@@ -1,4 +1,4 @@
-import { createEffect, createMemo, createSignal, For } from 'solid-js'
+import { createMemo, createSignal, For } from 'solid-js'
 import useRequest from 'solid-request'
 import './Modal.css'
 
@@ -11,22 +11,14 @@ const Modal = (props: Props) => {
 	// let inputRef: HTMLTextAreaElement
 	const [input, setInput] = createSignal<string>('')
 	const [data, setData] = createSignal([])
-	useRequest(() => fetch('/prompt.json').then((res) => res.json()), {
-		onSuccess: (res) => {
-			setData(() => res)
-		},
-	})
-
-	// onMount(() => {
-	// 	inputRef.addEventListener('input', function () {
-	// 		// 处理输入事件
-	// 		// console.log('输入的内容：', inputRef.value)
-	// 		const res = data().filter((item) =>
-	// 			new RegExp(item.act, 'g').test(inputRef.value)
-	// 		)
-	// 		setData(res)
-	// 	})
-	// })
+	const { data: data1 } = useRequest(
+		() => fetch('/prompt.json').then((res) => res.json()),
+		{
+			onSuccess: (res) => {
+				setData(() => res)
+			},
+		}
+	)
 
 	const list = createMemo(() =>
 		data()?.filter((item) => new RegExp(input(), 'g').test(item.act))
@@ -39,9 +31,27 @@ const Modal = (props: Props) => {
 			// 	props.setVisiable(false)
 			// }}
 		>
+			{JSON.stringify(data1())}
 			<div id="ofBar">
 				<div id="ofBar-title">
-					预设行为列表
+					<div class="header">
+						<span class="title">预设行为列表</span>
+						<span
+							class="close"
+							onClick={() => {
+								props.setVisiable(false)
+							}}
+						>
+							<a>×</a>
+						</span>
+					</div>
+
+					{/* 
+					<div id="ofBar-right">
+						<div>
+							<a id="btn-bar">关闭</a>
+						</div>
+					</div> */}
 					<div class="gen-text-wrapper text-sm">
 						<input
 							gen-textarea
@@ -66,17 +76,6 @@ const Modal = (props: Props) => {
 							</div>
 						)}
 					</For>
-				</div>
-				<div
-					id="ofBar-right"
-					onClick={() => {
-						props.setVisiable(false)
-					}}
-				>
-					<div>
-						<a id="btn-bar">关闭</a>
-						<a id="close-bar">×</a>
-					</div>
 				</div>
 			</div>
 		</div>

@@ -59,7 +59,25 @@
 #ofBar-title {
 	font-size: 1.25rem;
 	font-weight: 600;
+
+	width: 100%;
 	/* padding-bottom: 1rem; */
+}
+
+#ofBar-title .header {
+	display: flex;
+	width: 100%;
+}
+
+.header .title {
+	flex: 1;
+}
+
+.header .close {
+	transform: scale(1.5);
+	width: 32px;
+	cursor: pointer;
+	text-align: right;
 }
 
 #ofBar-content {
@@ -67,7 +85,7 @@
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 8px;
-	height: 65%;
+	height: 75%;
 	overflow-y: scroll;
 }
 
